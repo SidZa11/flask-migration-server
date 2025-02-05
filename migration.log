@@ -1,0 +1,2229 @@
+2025-02-05 12:31:15,304 - INFO - Connecting to Cassandra...
+2025-02-05 12:31:15,306 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 12:31:15,842 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 12:31:16,457 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 12:31:18,302 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 12:31:20,306 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:31:20,307 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:31:20,308 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:35:14,785 - INFO - Connecting to Cassandra...
+2025-02-05 12:35:18,733 - INFO - Cassandra connection established.
+2025-02-05 12:35:18,734 - INFO - Connecting to PostgreSQL...
+2025-02-05 12:35:20,265 - INFO - PostgreSQL connection established.
+2025-02-05 12:35:20,267 - INFO - Start Timestamp: 1736101800000, End Timestamp: 1736533799000
+2025-02-05 12:35:20,267 - INFO - Executing Cassandra query...
+2025-02-05 12:39:21,922 - INFO - Connecting to Cassandra...
+2025-02-05 12:39:26,022 - INFO - Cassandra connection established.
+2025-02-05 12:39:26,022 - INFO - Connecting to PostgreSQL...
+2025-02-05 12:39:27,352 - INFO - PostgreSQL connection established.
+2025-02-05 12:39:27,352 - INFO - Start Timestamp: 1736101800000, End Timestamp: 1736533799000
+2025-02-05 12:39:27,352 - INFO - Executing Cassandra query...
+2025-02-05 12:39:37,243 - WARNING - Server warning: Replica filtering protection has cached over 2000 rows during query SELECT dbl_v, long_v FROM thingsboard.ts_kv_cf WHERE ts > 1736101800000 AND ts < 1736533799000 AND key IN ['INV_Total_Power', 'PV_Daily_Energy_Today', 'CUF_AC', 'CO2_EmissionsKg_Saved', 'DG_Total_Power', 'DG_Total_Energy', 'VOLT_L1_L2', 'Daily_Runtime_Sum', 'Daily_Saving_Sum', 'Grid_Power_kW', 'Grid_AVG_Frequency', 'Grid_Daily_Energy_Export_kWh', 'Grid_Daily_Energy_Import_kWh', 'Grid_AVG_Voltage', 'AGC_AMP_L1', 'PCS_Total_Power', 'kWhcharged_Day', 'kWhdischarged_Day', 'ESS_SOC', 'Line_AVG_HZ', 'ESS_AVG_Line_Volt', 'ESS_AVG_Line_Amps', 'Load_Power', 'CUF_DC', 'Total_Runtime_5_min', 'Total_Saving_5_min', 'Plant_Availability', 'Plant_Down_instance', 'Plant_Down', 'Grid_Out', 'Grid_Out_Occurrence', 'Grid_Out_Instance'] LIMIT 2000000 ALLOW FILTERING. (See 'cached_replica_rows_warn_threshold' in cassandra.yaml.)
+2025-02-05 12:39:37,255 - INFO - Writing data to CSV file: data.csv
+2025-02-05 12:39:37,267 - INFO - Processed 1000 records so far...
+2025-02-05 12:39:37,275 - INFO - Processed 2000 records so far...
+2025-02-05 12:39:37,280 - INFO - Processed 3000 records so far...
+2025-02-05 12:39:37,285 - INFO - Processed 4000 records so far...
+2025-02-05 12:39:37,288 - INFO - Processed 5000 records so far...
+2025-02-05 12:39:37,301 - INFO - Processed 6000 records so far...
+2025-02-05 12:39:37,309 - INFO - Processed 7000 records so far...
+2025-02-05 12:39:37,325 - INFO - Processed 8000 records so far...
+2025-02-05 12:39:37,336 - INFO - Processed 9000 records so far...
+2025-02-05 12:39:37,346 - INFO - Processed 10000 records so far...
+2025-02-05 12:39:37,360 - INFO - Processed 11000 records so far...
+2025-02-05 12:39:37,364 - INFO - Processed 12000 records so far...
+2025-02-05 12:39:37,370 - INFO - Processed 13000 records so far...
+2025-02-05 12:39:37,385 - INFO - Processed 14000 records so far...
+2025-02-05 12:39:37,393 - INFO - Processed 15000 records so far...
+2025-02-05 12:39:37,404 - INFO - Processed 16000 records so far...
+2025-02-05 12:39:37,415 - INFO - Processed 17000 records so far...
+2025-02-05 12:39:37,419 - INFO - Processed 18000 records so far...
+2025-02-05 12:39:37,439 - INFO - Processed 19000 records so far...
+2025-02-05 12:39:37,448 - INFO - Processed 20000 records so far...
+2025-02-05 12:39:37,451 - INFO - Processed 21000 records so far...
+2025-02-05 12:39:37,457 - INFO - Processed 22000 records so far...
+2025-02-05 12:39:37,464 - INFO - Processed 23000 records so far...
+2025-02-05 12:39:37,470 - INFO - Processed 24000 records so far...
+2025-02-05 12:39:37,483 - INFO - Processed 25000 records so far...
+2025-02-05 12:39:37,492 - INFO - Processed 26000 records so far...
+2025-02-05 12:39:37,503 - INFO - Processed 27000 records so far...
+2025-02-05 12:39:37,513 - INFO - Processed 28000 records so far...
+2025-02-05 12:39:37,520 - INFO - Processed 29000 records so far...
+2025-02-05 12:39:37,525 - INFO - Processed 30000 records so far...
+2025-02-05 12:39:37,532 - INFO - Finished writing 30908 records to CSV.
+2025-02-05 12:39:37,532 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 12:39:41,733 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 12:39:41,735 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 12:39:41,736 - INFO - Closing database connections...
+2025-02-05 12:39:41,739 - INFO - All connections closed.
+2025-02-05 12:39:41,739 - INFO - Total time: 19.82 seconds
+2025-02-05 12:52:27,159 - INFO - Connecting to Cassandra...
+2025-02-05 12:52:30,942 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:52:30,947 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:52:30,949 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:53:26,924 - INFO - Connecting to Cassandra...
+2025-02-05 12:53:30,771 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:53:30,774 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:53:30,775 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:55:31,987 - INFO - Connecting to Cassandra...
+2025-02-05 12:55:35,710 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:55:35,713 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:55:35,714 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:55:53,060 - INFO - Connecting to Cassandra...
+2025-02-05 12:55:56,889 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:55:56,892 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:55:56,894 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:57:33,594 - INFO - Connecting to Cassandra...
+2025-02-05 12:57:33,595 - ERROR - Failed to connect to Cassandra: name 'ExecutionProfile' is not defined
+2025-02-05 12:58:46,231 - INFO - Connecting to Cassandra...
+2025-02-05 12:58:46,234 - ERROR - Failed to connect to Cassandra: Clusters constructed with execution_profiles should not specify legacy parameters load_balancing_policy or default_retry_policy. Configure this in a profile instead.
+2025-02-05 12:59:18,586 - INFO - Connecting to Cassandra...
+2025-02-05 12:59:18,588 - WARNING - Cluster.__init__ called with contact_points specified, but load-balancing policies are not specified in some ExecutionProfiles. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], EPs without explicit LBPs = ('EXEC_PROFILE_DEFAULT',))
+2025-02-05 12:59:20,124 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 12:59:22,138 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 12:59:22,141 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 12:59:22,144 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:00:31,650 - INFO - Connecting to Cassandra...
+2025-02-05 13:00:31,654 - WARNING - Cluster.__init__ called with contact_points specified, but load-balancing policies are not specified in some ExecutionProfiles. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], EPs without explicit LBPs = ('EXEC_PROFILE_DEFAULT',))
+2025-02-05 13:00:33,430 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 13:00:35,439 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:00:35,441 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:00:35,443 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:00:57,179 - INFO - Connecting to Cassandra...
+2025-02-05 13:01:00,728 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:01:00,730 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:01:00,732 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:06:59,605 - INFO - Connecting to Cassandra...
+2025-02-05 13:07:03,254 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:07:03,257 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:07:03,259 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:07:42,712 - INFO - Connecting to Cassandra...
+2025-02-05 13:07:43,232 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 13:07:43,662 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 13:07:47,253 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:07:47,255 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:07:47,256 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:10:39,746 - INFO - Connecting to Cassandra...
+2025-02-05 13:10:43,526 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:10:43,527 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:10:43,529 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:11:11,882 - INFO - Connecting to Cassandra...
+2025-02-05 13:11:11,884 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 13:11:12,326 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 13:11:12,957 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 13:11:14,699 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 13:11:16,701 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:11:16,703 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:11:16,705 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:12:53,658 - INFO - Connecting to Cassandra...
+2025-02-05 13:12:57,455 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:12:57,463 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:12:57,466 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:20:34,099 - INFO - Connecting to Cassandra...
+2025-02-05 13:20:38,367 - INFO - Cassandra connection established.
+2025-02-05 13:20:38,368 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:20:39,613 - INFO - PostgreSQL connection established.
+2025-02-05 13:20:39,615 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1737417599000
+2025-02-05 13:20:39,615 - INFO - Executing Cassandra query...
+2025-02-05 13:21:46,718 - INFO - Connecting to Cassandra...
+2025-02-05 13:21:50,940 - INFO - Cassandra connection established.
+2025-02-05 13:21:50,941 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:21:52,027 - INFO - PostgreSQL connection established.
+2025-02-05 13:21:52,029 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1737417599000
+2025-02-05 13:21:52,030 - INFO - Executing Cassandra query...
+2025-02-05 13:25:35,710 - INFO - Connecting to Cassandra...
+2025-02-05 13:25:39,925 - INFO - Cassandra connection established.
+2025-02-05 13:25:39,926 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:25:41,008 - INFO - PostgreSQL connection established.
+2025-02-05 13:25:41,009 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736985599000
+2025-02-05 13:25:41,010 - INFO - Executing Cassandra query...
+2025-02-05 13:26:59,790 - INFO - Connecting to Cassandra...
+2025-02-05 13:27:03,947 - INFO - Cassandra connection established.
+2025-02-05 13:27:03,947 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:27:05,046 - INFO - PostgreSQL connection established.
+2025-02-05 13:27:05,047 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736985599000
+2025-02-05 13:27:05,048 - INFO - Executing Cassandra query...
+2025-02-05 13:28:34,137 - INFO - Connecting to Cassandra...
+2025-02-05 13:28:37,417 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:28:37,419 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:28:37,421 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:28:52,068 - INFO - Connecting to Cassandra...
+2025-02-05 13:28:56,138 - INFO - Cassandra connection established.
+2025-02-05 13:28:56,139 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:28:57,203 - INFO - PostgreSQL connection established.
+2025-02-05 13:28:57,204 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736985599000
+2025-02-05 13:28:57,204 - INFO - Executing Cassandra query...
+2025-02-05 13:29:37,110 - INFO - Connecting to Cassandra...
+2025-02-05 13:29:40,431 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:29:40,433 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:29:40,434 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:29:45,333 - INFO - Connecting to Cassandra...
+2025-02-05 13:29:49,438 - INFO - Cassandra connection established.
+2025-02-05 13:29:49,439 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:29:50,499 - INFO - PostgreSQL connection established.
+2025-02-05 13:29:50,499 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736985599000
+2025-02-05 13:29:50,499 - INFO - Executing Cassandra query...
+2025-02-05 13:30:21,147 - INFO - Connecting to Cassandra...
+2025-02-05 13:30:24,459 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:30:24,460 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:30:24,462 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:30:27,214 - INFO - Connecting to Cassandra...
+2025-02-05 13:30:31,293 - INFO - Cassandra connection established.
+2025-02-05 13:30:31,294 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:30:32,472 - INFO - PostgreSQL connection established.
+2025-02-05 13:30:32,473 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736985599000
+2025-02-05 13:30:32,473 - INFO - Executing Cassandra query...
+2025-02-05 13:34:23,662 - INFO - Connecting to Cassandra...
+2025-02-05 13:34:27,120 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:34:27,124 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:34:27,125 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:34:29,884 - INFO - Connecting to Cassandra...
+2025-02-05 13:34:33,390 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:34:33,392 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:34:33,394 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:35:02,627 - INFO - Connecting to Cassandra...
+2025-02-05 13:35:06,827 - INFO - Cassandra connection established.
+2025-02-05 13:35:06,828 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:35:07,922 - INFO - PostgreSQL connection established.
+2025-02-05 13:35:07,924 - INFO - Start Timestamp: 1736553600000, End Timestamp: 1736726399000
+2025-02-05 13:35:07,925 - INFO - Executing Cassandra query...
+2025-02-05 13:35:16,254 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:35:16,256 - INFO - Processed 1000 records so far...
+2025-02-05 13:35:16,258 - INFO - Processed 2000 records so far...
+2025-02-05 13:35:16,263 - INFO - Processed 3000 records so far...
+2025-02-05 13:35:16,265 - INFO - Processed 4000 records so far...
+2025-02-05 13:35:16,269 - INFO - Processed 5000 records so far...
+2025-02-05 13:35:16,272 - INFO - Processed 6000 records so far...
+2025-02-05 13:35:16,278 - INFO - Processed 7000 records so far...
+2025-02-05 13:35:16,283 - INFO - Processed 8000 records so far...
+2025-02-05 13:35:16,289 - INFO - Processed 9000 records so far...
+2025-02-05 13:35:16,292 - INFO - Processed 10000 records so far...
+2025-02-05 13:35:16,299 - INFO - Processed 11000 records so far...
+2025-02-05 13:35:16,310 - INFO - Processed 12000 records so far...
+2025-02-05 13:35:16,318 - INFO - Processed 13000 records so far...
+2025-02-05 13:35:16,324 - INFO - Processed 14000 records so far...
+2025-02-05 13:35:16,329 - INFO - Processed 15000 records so far...
+2025-02-05 13:35:16,334 - INFO - Processed 16000 records so far...
+2025-02-05 13:35:16,340 - INFO - Processed 17000 records so far...
+2025-02-05 13:35:16,349 - INFO - Processed 18000 records so far...
+2025-02-05 13:35:16,354 - INFO - Processed 19000 records so far...
+2025-02-05 13:35:16,357 - INFO - Processed 20000 records so far...
+2025-02-05 13:35:16,360 - INFO - Processed 21000 records so far...
+2025-02-05 13:35:16,365 - INFO - Processed 22000 records so far...
+2025-02-05 13:35:16,368 - INFO - Processed 23000 records so far...
+2025-02-05 13:35:16,374 - INFO - Processed 24000 records so far...
+2025-02-05 13:35:16,380 - INFO - Processed 25000 records so far...
+2025-02-05 13:35:16,381 - INFO - Finished writing 25383 records to CSV.
+2025-02-05 13:35:16,382 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:35:19,433 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:35:19,434 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:35:19,435 - INFO - Closing database connections...
+2025-02-05 13:35:19,436 - INFO - All connections closed.
+2025-02-05 13:35:19,436 - INFO - Total time: 16.81 seconds
+2025-02-05 13:36:26,973 - INFO - Connecting to Cassandra...
+2025-02-05 13:36:30,423 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:36:30,423 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:36:30,424 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:36:33,177 - INFO - Connecting to Cassandra...
+2025-02-05 13:36:37,384 - INFO - Cassandra connection established.
+2025-02-05 13:36:37,384 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:36:38,465 - INFO - PostgreSQL connection established.
+2025-02-05 13:36:38,467 - INFO - Start Timestamp: 1736726400000, End Timestamp: 1736985599000
+2025-02-05 13:36:38,467 - INFO - Executing Cassandra query...
+2025-02-05 13:36:47,945 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:36:47,947 - INFO - Processed 1000 records so far...
+2025-02-05 13:36:47,950 - INFO - Processed 2000 records so far...
+2025-02-05 13:36:47,953 - INFO - Processed 3000 records so far...
+2025-02-05 13:36:47,956 - INFO - Processed 4000 records so far...
+2025-02-05 13:36:47,964 - INFO - Processed 5000 records so far...
+2025-02-05 13:36:47,971 - INFO - Processed 6000 records so far...
+2025-02-05 13:36:47,978 - INFO - Processed 7000 records so far...
+2025-02-05 13:36:47,989 - INFO - Processed 8000 records so far...
+2025-02-05 13:36:47,997 - INFO - Processed 9000 records so far...
+2025-02-05 13:36:48,018 - INFO - Processed 10000 records so far...
+2025-02-05 13:36:48,031 - INFO - Processed 11000 records so far...
+2025-02-05 13:36:48,044 - INFO - Processed 12000 records so far...
+2025-02-05 13:36:48,056 - INFO - Processed 13000 records so far...
+2025-02-05 13:36:48,062 - INFO - Processed 14000 records so far...
+2025-02-05 13:36:48,077 - INFO - Processed 15000 records so far...
+2025-02-05 13:36:48,090 - INFO - Processed 16000 records so far...
+2025-02-05 13:36:48,108 - INFO - Processed 17000 records so far...
+2025-02-05 13:36:48,117 - INFO - Processed 18000 records so far...
+2025-02-05 13:36:48,121 - INFO - Processed 19000 records so far...
+2025-02-05 13:36:48,129 - INFO - Processed 20000 records so far...
+2025-02-05 13:36:48,150 - INFO - Processed 21000 records so far...
+2025-02-05 13:36:48,165 - INFO - Processed 22000 records so far...
+2025-02-05 13:36:48,175 - INFO - Processed 23000 records so far...
+2025-02-05 13:36:48,186 - INFO - Processed 24000 records so far...
+2025-02-05 13:36:48,194 - INFO - Processed 25000 records so far...
+2025-02-05 13:36:48,197 - INFO - Processed 26000 records so far...
+2025-02-05 13:36:48,206 - INFO - Processed 27000 records so far...
+2025-02-05 13:36:48,209 - INFO - Processed 28000 records so far...
+2025-02-05 13:36:48,215 - INFO - Processed 29000 records so far...
+2025-02-05 13:36:48,218 - INFO - Processed 30000 records so far...
+2025-02-05 13:36:48,222 - INFO - Processed 31000 records so far...
+2025-02-05 13:36:48,227 - INFO - Processed 32000 records so far...
+2025-02-05 13:36:48,230 - INFO - Processed 33000 records so far...
+2025-02-05 13:36:48,242 - INFO - Processed 34000 records so far...
+2025-02-05 13:36:48,253 - INFO - Processed 35000 records so far...
+2025-02-05 13:36:48,262 - INFO - Processed 36000 records so far...
+2025-02-05 13:36:48,266 - INFO - Processed 37000 records so far...
+2025-02-05 13:36:48,269 - INFO - Processed 38000 records so far...
+2025-02-05 13:36:48,273 - INFO - Processed 39000 records so far...
+2025-02-05 13:36:48,285 - INFO - Processed 40000 records so far...
+2025-02-05 13:36:48,292 - INFO - Processed 41000 records so far...
+2025-02-05 13:36:48,295 - INFO - Processed 42000 records so far...
+2025-02-05 13:36:48,299 - INFO - Processed 43000 records so far...
+2025-02-05 13:36:48,309 - INFO - Processed 44000 records so far...
+2025-02-05 13:36:48,313 - INFO - Processed 45000 records so far...
+2025-02-05 13:36:48,318 - INFO - Processed 46000 records so far...
+2025-02-05 13:36:48,325 - INFO - Processed 47000 records so far...
+2025-02-05 13:36:48,333 - INFO - Processed 48000 records so far...
+2025-02-05 13:36:48,337 - INFO - Processed 49000 records so far...
+2025-02-05 13:36:48,344 - INFO - Processed 50000 records so far...
+2025-02-05 13:36:48,352 - INFO - Processed 51000 records so far...
+2025-02-05 13:36:48,356 - INFO - Processed 52000 records so far...
+2025-02-05 13:36:48,367 - INFO - Processed 53000 records so far...
+2025-02-05 13:36:48,372 - INFO - Processed 54000 records so far...
+2025-02-05 13:36:48,375 - INFO - Processed 55000 records so far...
+2025-02-05 13:36:48,376 - INFO - Finished writing 55079 records to CSV.
+2025-02-05 13:36:48,376 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:36:52,020 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:36:52,022 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:36:52,023 - INFO - Closing database connections...
+2025-02-05 13:36:52,026 - INFO - All connections closed.
+2025-02-05 13:36:52,026 - INFO - Total time: 18.85 seconds
+2025-02-05 13:38:02,620 - INFO - Connecting to Cassandra...
+2025-02-05 13:38:05,958 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:38:05,960 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:38:05,961 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:38:08,135 - INFO - Connecting to Cassandra...
+2025-02-05 13:38:11,460 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:38:11,461 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:38:11,463 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:38:18,975 - INFO - Connecting to Cassandra...
+2025-02-05 13:38:23,056 - INFO - Cassandra connection established.
+2025-02-05 13:38:23,057 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:38:24,154 - INFO - PostgreSQL connection established.
+2025-02-05 13:38:24,155 - INFO - Start Timestamp: 1736985600000, End Timestamp: 1737244799000
+2025-02-05 13:38:24,156 - INFO - Executing Cassandra query...
+2025-02-05 13:39:30,077 - INFO - Connecting to Cassandra...
+2025-02-05 13:39:33,460 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:39:33,462 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:39:33,464 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:39:36,441 - INFO - Connecting to Cassandra...
+2025-02-05 13:39:40,569 - INFO - Cassandra connection established.
+2025-02-05 13:39:40,570 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:39:41,641 - INFO - PostgreSQL connection established.
+2025-02-05 13:39:41,642 - INFO - Start Timestamp: 1736985600000, End Timestamp: 1737158399000
+2025-02-05 13:39:41,643 - INFO - Executing Cassandra query...
+2025-02-05 13:39:49,815 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:39:49,817 - INFO - Processed 1000 records so far...
+2025-02-05 13:39:49,819 - INFO - Processed 2000 records so far...
+2025-02-05 13:39:49,823 - INFO - Processed 3000 records so far...
+2025-02-05 13:39:49,825 - INFO - Processed 4000 records so far...
+2025-02-05 13:39:49,828 - INFO - Processed 5000 records so far...
+2025-02-05 13:39:49,836 - INFO - Processed 6000 records so far...
+2025-02-05 13:39:49,840 - INFO - Processed 7000 records so far...
+2025-02-05 13:39:49,842 - INFO - Processed 8000 records so far...
+2025-02-05 13:39:49,848 - INFO - Processed 9000 records so far...
+2025-02-05 13:39:49,852 - INFO - Processed 10000 records so far...
+2025-02-05 13:39:49,857 - INFO - Processed 11000 records so far...
+2025-02-05 13:39:49,861 - INFO - Processed 12000 records so far...
+2025-02-05 13:39:49,864 - INFO - Processed 13000 records so far...
+2025-02-05 13:39:49,871 - INFO - Processed 14000 records so far...
+2025-02-05 13:39:49,876 - INFO - Processed 15000 records so far...
+2025-02-05 13:39:49,882 - INFO - Processed 16000 records so far...
+2025-02-05 13:39:49,886 - INFO - Processed 17000 records so far...
+2025-02-05 13:39:49,894 - INFO - Processed 18000 records so far...
+2025-02-05 13:39:49,899 - INFO - Processed 19000 records so far...
+2025-02-05 13:39:49,901 - INFO - Processed 20000 records so far...
+2025-02-05 13:39:49,909 - INFO - Processed 21000 records so far...
+2025-02-05 13:39:49,918 - INFO - Processed 22000 records so far...
+2025-02-05 13:39:49,925 - INFO - Processed 23000 records so far...
+2025-02-05 13:39:49,931 - INFO - Processed 24000 records so far...
+2025-02-05 13:39:49,941 - INFO - Processed 25000 records so far...
+2025-02-05 13:39:49,944 - INFO - Processed 26000 records so far...
+2025-02-05 13:39:49,950 - INFO - Processed 27000 records so far...
+2025-02-05 13:39:49,957 - INFO - Processed 28000 records so far...
+2025-02-05 13:39:49,963 - INFO - Processed 29000 records so far...
+2025-02-05 13:39:49,969 - INFO - Processed 30000 records so far...
+2025-02-05 13:39:49,977 - INFO - Processed 31000 records so far...
+2025-02-05 13:39:49,987 - INFO - Processed 32000 records so far...
+2025-02-05 13:39:49,992 - INFO - Finished writing 32893 records to CSV.
+2025-02-05 13:39:49,992 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:39:52,438 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:39:52,440 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:39:52,440 - INFO - Closing database connections...
+2025-02-05 13:39:52,443 - INFO - All connections closed.
+2025-02-05 13:39:52,443 - INFO - Total time: 16.00 seconds
+2025-02-05 13:40:54,368 - INFO - Connecting to Cassandra...
+2025-02-05 13:40:58,467 - INFO - Cassandra connection established.
+2025-02-05 13:40:58,467 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:40:59,558 - INFO - PostgreSQL connection established.
+2025-02-05 13:40:59,559 - INFO - Start Timestamp: 1737158400000, End Timestamp: 1737331199000
+2025-02-05 13:40:59,560 - INFO - Executing Cassandra query...
+2025-02-05 13:41:36,493 - INFO - Connecting to Cassandra...
+2025-02-05 13:41:39,816 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:41:39,819 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:41:39,820 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:41:42,314 - INFO - Connecting to Cassandra...
+2025-02-05 13:41:45,612 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:41:45,615 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:41:45,618 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:42:30,777 - INFO - Connecting to Cassandra...
+2025-02-05 13:42:34,962 - INFO - Cassandra connection established.
+2025-02-05 13:42:34,963 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:42:36,111 - INFO - PostgreSQL connection established.
+2025-02-05 13:42:36,112 - INFO - Start Timestamp: 1737158400000, End Timestamp: 1737244799000
+2025-02-05 13:42:36,113 - INFO - Executing Cassandra query...
+2025-02-05 13:42:42,327 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:42:42,330 - INFO - Processed 1000 records so far...
+2025-02-05 13:42:42,333 - INFO - Processed 2000 records so far...
+2025-02-05 13:42:42,337 - INFO - Processed 3000 records so far...
+2025-02-05 13:42:42,339 - INFO - Processed 4000 records so far...
+2025-02-05 13:42:42,343 - INFO - Processed 5000 records so far...
+2025-02-05 13:42:42,351 - INFO - Processed 6000 records so far...
+2025-02-05 13:42:42,357 - INFO - Processed 7000 records so far...
+2025-02-05 13:42:42,370 - INFO - Processed 8000 records so far...
+2025-02-05 13:42:42,374 - INFO - Processed 9000 records so far...
+2025-02-05 13:42:42,378 - INFO - Processed 10000 records so far...
+2025-02-05 13:42:42,382 - INFO - Processed 11000 records so far...
+2025-02-05 13:42:42,386 - INFO - Processed 12000 records so far...
+2025-02-05 13:42:42,389 - INFO - Processed 13000 records so far...
+2025-02-05 13:42:42,392 - INFO - Processed 14000 records so far...
+2025-02-05 13:42:42,394 - INFO - Finished writing 14148 records to CSV.
+2025-02-05 13:42:42,394 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:42:44,637 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:42:44,638 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:42:44,638 - INFO - Closing database connections...
+2025-02-05 13:42:44,641 - INFO - All connections closed.
+2025-02-05 13:42:44,641 - INFO - Total time: 13.86 seconds
+2025-02-05 13:43:37,337 - INFO - Connecting to Cassandra...
+2025-02-05 13:43:41,367 - INFO - Cassandra connection established.
+2025-02-05 13:43:41,367 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:43:42,457 - INFO - PostgreSQL connection established.
+2025-02-05 13:43:42,458 - INFO - Start Timestamp: 1737244800000, End Timestamp: 1737417599000
+2025-02-05 13:43:42,458 - INFO - Executing Cassandra query...
+2025-02-05 13:43:55,906 - INFO - Connecting to Cassandra...
+2025-02-05 13:43:59,989 - INFO - Cassandra connection established.
+2025-02-05 13:43:59,990 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:44:01,050 - INFO - PostgreSQL connection established.
+2025-02-05 13:44:01,051 - INFO - Start Timestamp: 1737244800000, End Timestamp: 1737417599000
+2025-02-05 13:44:01,051 - INFO - Executing Cassandra query...
+2025-02-05 13:44:08,946 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:44:08,949 - INFO - Processed 1000 records so far...
+2025-02-05 13:44:08,952 - INFO - Processed 2000 records so far...
+2025-02-05 13:44:08,956 - INFO - Processed 3000 records so far...
+2025-02-05 13:44:08,959 - INFO - Processed 4000 records so far...
+2025-02-05 13:44:08,965 - INFO - Processed 5000 records so far...
+2025-02-05 13:44:08,969 - INFO - Processed 6000 records so far...
+2025-02-05 13:44:08,971 - INFO - Processed 7000 records so far...
+2025-02-05 13:44:08,977 - INFO - Processed 8000 records so far...
+2025-02-05 13:44:08,980 - INFO - Processed 9000 records so far...
+2025-02-05 13:44:08,982 - INFO - Processed 10000 records so far...
+2025-02-05 13:44:08,986 - INFO - Processed 11000 records so far...
+2025-02-05 13:44:08,989 - INFO - Processed 12000 records so far...
+2025-02-05 13:44:08,993 - INFO - Processed 13000 records so far...
+2025-02-05 13:44:08,996 - INFO - Processed 14000 records so far...
+2025-02-05 13:44:08,999 - INFO - Processed 15000 records so far...
+2025-02-05 13:44:09,001 - INFO - Processed 16000 records so far...
+2025-02-05 13:44:09,003 - INFO - Processed 17000 records so far...
+2025-02-05 13:44:09,007 - INFO - Processed 18000 records so far...
+2025-02-05 13:44:09,011 - INFO - Processed 19000 records so far...
+2025-02-05 13:44:09,014 - INFO - Processed 20000 records so far...
+2025-02-05 13:44:09,018 - INFO - Processed 21000 records so far...
+2025-02-05 13:44:09,023 - INFO - Processed 22000 records so far...
+2025-02-05 13:44:09,030 - INFO - Processed 23000 records so far...
+2025-02-05 13:44:09,037 - INFO - Processed 24000 records so far...
+2025-02-05 13:44:09,040 - INFO - Processed 25000 records so far...
+2025-02-05 13:44:09,043 - INFO - Processed 26000 records so far...
+2025-02-05 13:44:09,046 - INFO - Processed 27000 records so far...
+2025-02-05 13:44:09,052 - INFO - Processed 28000 records so far...
+2025-02-05 13:44:09,056 - INFO - Processed 29000 records so far...
+2025-02-05 13:44:09,060 - INFO - Processed 30000 records so far...
+2025-02-05 13:44:09,063 - INFO - Processed 31000 records so far...
+2025-02-05 13:44:09,064 - INFO - Finished writing 31470 records to CSV.
+2025-02-05 13:44:09,065 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:44:11,442 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:44:11,444 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:44:11,444 - INFO - Closing database connections...
+2025-02-05 13:44:11,446 - INFO - All connections closed.
+2025-02-05 13:44:11,447 - INFO - Total time: 15.54 seconds
+2025-02-05 13:48:40,712 - INFO - Connecting to Cassandra...
+2025-02-05 13:48:44,814 - INFO - Cassandra connection established.
+2025-02-05 13:48:44,814 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:48:45,892 - INFO - PostgreSQL connection established.
+2025-02-05 13:48:45,892 - INFO - Start Timestamp: 1737417600000, End Timestamp: 1737590399000
+2025-02-05 13:48:45,893 - INFO - Executing Cassandra query...
+2025-02-05 13:48:54,071 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:48:54,073 - INFO - Processed 1000 records so far...
+2025-02-05 13:48:54,075 - INFO - Processed 2000 records so far...
+2025-02-05 13:48:54,079 - INFO - Processed 3000 records so far...
+2025-02-05 13:48:54,082 - INFO - Processed 4000 records so far...
+2025-02-05 13:48:54,085 - INFO - Processed 5000 records so far...
+2025-02-05 13:48:54,090 - INFO - Processed 6000 records so far...
+2025-02-05 13:48:54,095 - INFO - Processed 7000 records so far...
+2025-02-05 13:48:54,103 - INFO - Processed 8000 records so far...
+2025-02-05 13:48:54,115 - INFO - Processed 9000 records so far...
+2025-02-05 13:48:54,119 - INFO - Processed 10000 records so far...
+2025-02-05 13:48:54,124 - INFO - Processed 11000 records so far...
+2025-02-05 13:48:54,127 - INFO - Processed 12000 records so far...
+2025-02-05 13:48:54,129 - INFO - Processed 13000 records so far...
+2025-02-05 13:48:54,132 - INFO - Processed 14000 records so far...
+2025-02-05 13:48:54,138 - INFO - Processed 15000 records so far...
+2025-02-05 13:48:54,145 - INFO - Processed 16000 records so far...
+2025-02-05 13:48:54,150 - INFO - Processed 17000 records so far...
+2025-02-05 13:48:54,154 - INFO - Processed 18000 records so far...
+2025-02-05 13:48:54,157 - INFO - Processed 19000 records so far...
+2025-02-05 13:48:54,165 - INFO - Processed 20000 records so far...
+2025-02-05 13:48:54,172 - INFO - Processed 21000 records so far...
+2025-02-05 13:48:54,177 - INFO - Processed 22000 records so far...
+2025-02-05 13:48:54,185 - INFO - Processed 23000 records so far...
+2025-02-05 13:48:54,197 - INFO - Processed 24000 records so far...
+2025-02-05 13:48:54,199 - INFO - Processed 25000 records so far...
+2025-02-05 13:48:54,203 - INFO - Processed 26000 records so far...
+2025-02-05 13:48:54,211 - INFO - Processed 27000 records so far...
+2025-02-05 13:48:54,214 - INFO - Processed 28000 records so far...
+2025-02-05 13:48:54,218 - INFO - Processed 29000 records so far...
+2025-02-05 13:48:54,227 - INFO - Processed 30000 records so far...
+2025-02-05 13:48:54,236 - INFO - Processed 31000 records so far...
+2025-02-05 13:48:54,242 - INFO - Processed 32000 records so far...
+2025-02-05 13:48:54,244 - INFO - Processed 33000 records so far...
+2025-02-05 13:48:54,248 - INFO - Processed 34000 records so far...
+2025-02-05 13:48:54,252 - INFO - Processed 35000 records so far...
+2025-02-05 13:48:54,253 - INFO - Finished writing 35359 records to CSV.
+2025-02-05 13:48:54,253 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:48:57,322 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:48:57,324 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:48:57,324 - INFO - Closing database connections...
+2025-02-05 13:48:57,326 - INFO - All connections closed.
+2025-02-05 13:48:57,326 - INFO - Total time: 16.61 seconds
+2025-02-05 13:49:42,721 - INFO - Connecting to Cassandra...
+2025-02-05 13:49:46,024 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:49:46,026 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:49:46,027 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:49:48,448 - INFO - Connecting to Cassandra...
+2025-02-05 13:49:53,103 - INFO - Cassandra connection established.
+2025-02-05 13:49:53,104 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:49:54,241 - INFO - PostgreSQL connection established.
+2025-02-05 13:49:54,242 - INFO - Start Timestamp: 1737590400000, End Timestamp: 1737849599000
+2025-02-05 13:49:54,242 - INFO - Executing Cassandra query...
+2025-02-05 13:50:03,081 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:50:03,084 - INFO - Processed 1000 records so far...
+2025-02-05 13:50:03,087 - INFO - Processed 2000 records so far...
+2025-02-05 13:50:03,090 - INFO - Processed 3000 records so far...
+2025-02-05 13:50:03,093 - INFO - Processed 4000 records so far...
+2025-02-05 13:50:03,096 - INFO - Processed 5000 records so far...
+2025-02-05 13:50:03,099 - INFO - Processed 6000 records so far...
+2025-02-05 13:50:03,102 - INFO - Processed 7000 records so far...
+2025-02-05 13:50:03,105 - INFO - Processed 8000 records so far...
+2025-02-05 13:50:03,111 - INFO - Processed 9000 records so far...
+2025-02-05 13:50:03,114 - INFO - Processed 10000 records so far...
+2025-02-05 13:50:03,116 - INFO - Processed 11000 records so far...
+2025-02-05 13:50:03,119 - INFO - Processed 12000 records so far...
+2025-02-05 13:50:03,122 - INFO - Processed 13000 records so far...
+2025-02-05 13:50:03,125 - INFO - Processed 14000 records so far...
+2025-02-05 13:50:03,128 - INFO - Processed 15000 records so far...
+2025-02-05 13:50:03,131 - INFO - Processed 16000 records so far...
+2025-02-05 13:50:03,135 - INFO - Processed 17000 records so far...
+2025-02-05 13:50:03,141 - INFO - Processed 18000 records so far...
+2025-02-05 13:50:03,144 - INFO - Processed 19000 records so far...
+2025-02-05 13:50:03,147 - INFO - Processed 20000 records so far...
+2025-02-05 13:50:03,150 - INFO - Processed 21000 records so far...
+2025-02-05 13:50:03,156 - INFO - Processed 22000 records so far...
+2025-02-05 13:50:03,160 - INFO - Processed 23000 records so far...
+2025-02-05 13:50:03,165 - INFO - Processed 24000 records so far...
+2025-02-05 13:50:03,172 - INFO - Processed 25000 records so far...
+2025-02-05 13:50:03,175 - INFO - Processed 26000 records so far...
+2025-02-05 13:50:03,178 - INFO - Processed 27000 records so far...
+2025-02-05 13:50:03,182 - INFO - Processed 28000 records so far...
+2025-02-05 13:50:03,188 - INFO - Processed 29000 records so far...
+2025-02-05 13:50:03,193 - INFO - Processed 30000 records so far...
+2025-02-05 13:50:03,202 - INFO - Processed 31000 records so far...
+2025-02-05 13:50:03,205 - INFO - Processed 32000 records so far...
+2025-02-05 13:50:03,211 - INFO - Processed 33000 records so far...
+2025-02-05 13:50:03,215 - INFO - Processed 34000 records so far...
+2025-02-05 13:50:03,219 - INFO - Processed 35000 records so far...
+2025-02-05 13:50:03,224 - INFO - Processed 36000 records so far...
+2025-02-05 13:50:03,229 - INFO - Processed 37000 records so far...
+2025-02-05 13:50:03,235 - INFO - Processed 38000 records so far...
+2025-02-05 13:50:03,238 - INFO - Processed 39000 records so far...
+2025-02-05 13:50:03,246 - INFO - Processed 40000 records so far...
+2025-02-05 13:50:03,252 - INFO - Processed 41000 records so far...
+2025-02-05 13:50:03,260 - INFO - Processed 42000 records so far...
+2025-02-05 13:50:03,268 - INFO - Processed 43000 records so far...
+2025-02-05 13:50:03,271 - INFO - Finished writing 43535 records to CSV.
+2025-02-05 13:50:03,272 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:50:06,963 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:50:06,967 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:50:06,967 - INFO - Closing database connections...
+2025-02-05 13:50:06,968 - INFO - All connections closed.
+2025-02-05 13:50:06,969 - INFO - Total time: 18.52 seconds
+2025-02-05 13:51:17,501 - INFO - Connecting to Cassandra...
+2025-02-05 13:51:21,629 - INFO - Cassandra connection established.
+2025-02-05 13:51:21,630 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:51:22,745 - INFO - PostgreSQL connection established.
+2025-02-05 13:51:22,745 - INFO - Start Timestamp: 1737849600000, End Timestamp: 1738108799000
+2025-02-05 13:51:22,745 - INFO - Executing Cassandra query...
+2025-02-05 13:51:30,969 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:51:30,972 - INFO - Processed 1000 records so far...
+2025-02-05 13:51:30,974 - INFO - Processed 2000 records so far...
+2025-02-05 13:51:30,976 - INFO - Processed 3000 records so far...
+2025-02-05 13:51:30,981 - INFO - Processed 4000 records so far...
+2025-02-05 13:51:30,983 - INFO - Processed 5000 records so far...
+2025-02-05 13:51:30,985 - INFO - Processed 6000 records so far...
+2025-02-05 13:51:30,987 - INFO - Processed 7000 records so far...
+2025-02-05 13:51:30,990 - INFO - Processed 8000 records so far...
+2025-02-05 13:51:30,992 - INFO - Processed 9000 records so far...
+2025-02-05 13:51:30,995 - INFO - Processed 10000 records so far...
+2025-02-05 13:51:30,997 - INFO - Processed 11000 records so far...
+2025-02-05 13:51:31,000 - INFO - Processed 12000 records so far...
+2025-02-05 13:51:31,002 - INFO - Processed 13000 records so far...
+2025-02-05 13:51:31,004 - INFO - Processed 14000 records so far...
+2025-02-05 13:51:31,007 - INFO - Processed 15000 records so far...
+2025-02-05 13:51:31,009 - INFO - Processed 16000 records so far...
+2025-02-05 13:51:31,011 - INFO - Processed 17000 records so far...
+2025-02-05 13:51:31,014 - INFO - Processed 18000 records so far...
+2025-02-05 13:51:31,017 - INFO - Processed 19000 records so far...
+2025-02-05 13:51:31,020 - INFO - Processed 20000 records so far...
+2025-02-05 13:51:31,024 - INFO - Processed 21000 records so far...
+2025-02-05 13:51:31,026 - INFO - Processed 22000 records so far...
+2025-02-05 13:51:31,031 - INFO - Processed 23000 records so far...
+2025-02-05 13:51:31,035 - INFO - Processed 24000 records so far...
+2025-02-05 13:51:31,038 - INFO - Processed 25000 records so far...
+2025-02-05 13:51:31,040 - INFO - Processed 26000 records so far...
+2025-02-05 13:51:31,044 - INFO - Processed 27000 records so far...
+2025-02-05 13:51:31,049 - INFO - Processed 28000 records so far...
+2025-02-05 13:51:31,060 - INFO - Processed 29000 records so far...
+2025-02-05 13:51:31,077 - INFO - Processed 30000 records so far...
+2025-02-05 13:51:31,087 - INFO - Processed 31000 records so far...
+2025-02-05 13:51:31,096 - INFO - Processed 32000 records so far...
+2025-02-05 13:51:31,106 - INFO - Processed 33000 records so far...
+2025-02-05 13:51:31,117 - INFO - Processed 34000 records so far...
+2025-02-05 13:51:31,134 - INFO - Processed 35000 records so far...
+2025-02-05 13:51:31,145 - INFO - Processed 36000 records so far...
+2025-02-05 13:51:31,146 - INFO - Finished writing 36015 records to CSV.
+2025-02-05 13:51:31,146 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:51:33,739 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:51:33,739 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:51:33,739 - INFO - Closing database connections...
+2025-02-05 13:51:33,742 - INFO - All connections closed.
+2025-02-05 13:51:33,742 - INFO - Total time: 16.24 seconds
+2025-02-05 13:52:24,317 - INFO - Connecting to Cassandra...
+2025-02-05 13:52:28,398 - INFO - Cassandra connection established.
+2025-02-05 13:52:28,398 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:52:29,493 - INFO - PostgreSQL connection established.
+2025-02-05 13:52:29,494 - INFO - Start Timestamp: 1738108800000, End Timestamp: 1738367999000
+2025-02-05 13:52:29,495 - INFO - Executing Cassandra query...
+2025-02-05 13:52:37,948 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:52:37,951 - INFO - Processed 1000 records so far...
+2025-02-05 13:52:37,956 - INFO - Processed 2000 records so far...
+2025-02-05 13:52:37,958 - INFO - Processed 3000 records so far...
+2025-02-05 13:52:37,961 - INFO - Processed 4000 records so far...
+2025-02-05 13:52:37,965 - INFO - Processed 5000 records so far...
+2025-02-05 13:52:37,974 - INFO - Processed 6000 records so far...
+2025-02-05 13:52:37,978 - INFO - Processed 7000 records so far...
+2025-02-05 13:52:37,990 - INFO - Processed 8000 records so far...
+2025-02-05 13:52:37,996 - INFO - Processed 9000 records so far...
+2025-02-05 13:52:37,999 - INFO - Processed 10000 records so far...
+2025-02-05 13:52:38,006 - INFO - Processed 11000 records so far...
+2025-02-05 13:52:38,009 - INFO - Processed 12000 records so far...
+2025-02-05 13:52:38,013 - INFO - Processed 13000 records so far...
+2025-02-05 13:52:38,016 - INFO - Processed 14000 records so far...
+2025-02-05 13:52:38,022 - INFO - Processed 15000 records so far...
+2025-02-05 13:52:38,034 - INFO - Processed 16000 records so far...
+2025-02-05 13:52:38,053 - INFO - Processed 17000 records so far...
+2025-02-05 13:52:38,062 - INFO - Processed 18000 records so far...
+2025-02-05 13:52:38,070 - INFO - Processed 19000 records so far...
+2025-02-05 13:52:38,078 - INFO - Processed 20000 records so far...
+2025-02-05 13:52:38,094 - INFO - Processed 21000 records so far...
+2025-02-05 13:52:38,101 - INFO - Processed 22000 records so far...
+2025-02-05 13:52:38,110 - INFO - Processed 23000 records so far...
+2025-02-05 13:52:38,115 - INFO - Processed 24000 records so far...
+2025-02-05 13:52:38,121 - INFO - Processed 25000 records so far...
+2025-02-05 13:52:38,140 - INFO - Processed 26000 records so far...
+2025-02-05 13:52:38,151 - INFO - Processed 27000 records so far...
+2025-02-05 13:52:38,158 - INFO - Processed 28000 records so far...
+2025-02-05 13:52:38,166 - INFO - Processed 29000 records so far...
+2025-02-05 13:52:38,178 - INFO - Processed 30000 records so far...
+2025-02-05 13:52:38,184 - INFO - Processed 31000 records so far...
+2025-02-05 13:52:38,204 - INFO - Processed 32000 records so far...
+2025-02-05 13:52:38,216 - INFO - Processed 33000 records so far...
+2025-02-05 13:52:38,224 - INFO - Processed 34000 records so far...
+2025-02-05 13:52:38,228 - INFO - Processed 35000 records so far...
+2025-02-05 13:52:38,240 - INFO - Processed 36000 records so far...
+2025-02-05 13:52:38,246 - INFO - Processed 37000 records so far...
+2025-02-05 13:52:38,251 - INFO - Processed 38000 records so far...
+2025-02-05 13:52:38,255 - INFO - Processed 39000 records so far...
+2025-02-05 13:52:38,260 - INFO - Processed 40000 records so far...
+2025-02-05 13:52:38,266 - INFO - Finished writing 40975 records to CSV.
+2025-02-05 13:52:38,266 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:52:41,025 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:52:41,027 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:52:41,028 - INFO - Closing database connections...
+2025-02-05 13:52:41,030 - INFO - All connections closed.
+2025-02-05 13:52:41,031 - INFO - Total time: 16.71 seconds
+2025-02-05 13:53:42,958 - INFO - Connecting to Cassandra...
+2025-02-05 13:53:46,293 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:53:46,294 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:53:46,294 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:53:48,917 - INFO - Connecting to Cassandra...
+2025-02-05 13:53:52,958 - INFO - Cassandra connection established.
+2025-02-05 13:53:52,959 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:53:54,049 - INFO - PostgreSQL connection established.
+2025-02-05 13:53:54,050 - INFO - Start Timestamp: 1738368000000, End Timestamp: 1738627199000
+2025-02-05 13:53:54,050 - INFO - Executing Cassandra query...
+2025-02-05 13:54:02,394 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:54:02,396 - INFO - Processed 1000 records so far...
+2025-02-05 13:54:02,398 - INFO - Processed 2000 records so far...
+2025-02-05 13:54:02,400 - INFO - Processed 3000 records so far...
+2025-02-05 13:54:02,404 - INFO - Processed 4000 records so far...
+2025-02-05 13:54:02,407 - INFO - Processed 5000 records so far...
+2025-02-05 13:54:02,410 - INFO - Processed 6000 records so far...
+2025-02-05 13:54:02,413 - INFO - Processed 7000 records so far...
+2025-02-05 13:54:02,417 - INFO - Processed 8000 records so far...
+2025-02-05 13:54:02,421 - INFO - Processed 9000 records so far...
+2025-02-05 13:54:02,429 - INFO - Processed 10000 records so far...
+2025-02-05 13:54:02,434 - INFO - Processed 11000 records so far...
+2025-02-05 13:54:02,439 - INFO - Processed 12000 records so far...
+2025-02-05 13:54:02,451 - INFO - Processed 13000 records so far...
+2025-02-05 13:54:02,460 - INFO - Processed 14000 records so far...
+2025-02-05 13:54:02,464 - INFO - Processed 15000 records so far...
+2025-02-05 13:54:02,468 - INFO - Processed 16000 records so far...
+2025-02-05 13:54:02,472 - INFO - Processed 17000 records so far...
+2025-02-05 13:54:02,482 - INFO - Processed 18000 records so far...
+2025-02-05 13:54:02,487 - INFO - Processed 19000 records so far...
+2025-02-05 13:54:02,490 - INFO - Processed 20000 records so far...
+2025-02-05 13:54:02,493 - INFO - Processed 21000 records so far...
+2025-02-05 13:54:02,503 - INFO - Processed 22000 records so far...
+2025-02-05 13:54:02,505 - INFO - Processed 23000 records so far...
+2025-02-05 13:54:02,510 - INFO - Processed 24000 records so far...
+2025-02-05 13:54:02,514 - INFO - Processed 25000 records so far...
+2025-02-05 13:54:02,519 - INFO - Processed 26000 records so far...
+2025-02-05 13:54:02,523 - INFO - Processed 27000 records so far...
+2025-02-05 13:54:02,527 - INFO - Processed 28000 records so far...
+2025-02-05 13:54:02,535 - INFO - Processed 29000 records so far...
+2025-02-05 13:54:02,539 - INFO - Processed 30000 records so far...
+2025-02-05 13:54:02,541 - INFO - Processed 31000 records so far...
+2025-02-05 13:54:02,550 - INFO - Processed 32000 records so far...
+2025-02-05 13:54:02,559 - INFO - Processed 33000 records so far...
+2025-02-05 13:54:02,563 - INFO - Processed 34000 records so far...
+2025-02-05 13:54:02,575 - INFO - Processed 35000 records so far...
+2025-02-05 13:54:02,579 - INFO - Processed 36000 records so far...
+2025-02-05 13:54:02,582 - INFO - Processed 37000 records so far...
+2025-02-05 13:54:02,589 - INFO - Processed 38000 records so far...
+2025-02-05 13:54:02,597 - INFO - Processed 39000 records so far...
+2025-02-05 13:54:02,603 - INFO - Processed 40000 records so far...
+2025-02-05 13:54:02,608 - INFO - Finished writing 40974 records to CSV.
+2025-02-05 13:54:02,609 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:54:05,166 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:54:05,168 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:54:05,168 - INFO - Closing database connections...
+2025-02-05 13:54:05,170 - INFO - All connections closed.
+2025-02-05 13:54:05,170 - INFO - Total time: 16.25 seconds
+2025-02-05 13:55:01,661 - INFO - Connecting to Cassandra...
+2025-02-05 13:55:05,805 - INFO - Cassandra connection established.
+2025-02-05 13:55:05,805 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:55:06,888 - INFO - PostgreSQL connection established.
+2025-02-05 13:55:06,889 - INFO - Start Timestamp: 1738627200000, End Timestamp: 1738799999000
+2025-02-05 13:55:06,890 - INFO - Executing Cassandra query...
+2025-02-05 13:55:13,630 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:55:13,632 - INFO - Processed 1000 records so far...
+2025-02-05 13:55:13,635 - INFO - Processed 2000 records so far...
+2025-02-05 13:55:13,638 - INFO - Processed 3000 records so far...
+2025-02-05 13:55:13,641 - INFO - Processed 4000 records so far...
+2025-02-05 13:55:13,643 - INFO - Processed 5000 records so far...
+2025-02-05 13:55:13,646 - INFO - Processed 6000 records so far...
+2025-02-05 13:55:13,648 - INFO - Processed 7000 records so far...
+2025-02-05 13:55:13,652 - INFO - Processed 8000 records so far...
+2025-02-05 13:55:13,655 - INFO - Processed 9000 records so far...
+2025-02-05 13:55:13,657 - INFO - Processed 10000 records so far...
+2025-02-05 13:55:13,659 - INFO - Processed 11000 records so far...
+2025-02-05 13:55:13,661 - INFO - Processed 12000 records so far...
+2025-02-05 13:55:13,662 - INFO - Processed 13000 records so far...
+2025-02-05 13:55:13,664 - INFO - Processed 14000 records so far...
+2025-02-05 13:55:13,666 - INFO - Processed 15000 records so far...
+2025-02-05 13:55:13,669 - INFO - Processed 16000 records so far...
+2025-02-05 13:55:13,674 - INFO - Processed 17000 records so far...
+2025-02-05 13:55:13,676 - INFO - Processed 18000 records so far...
+2025-02-05 13:55:13,678 - INFO - Finished writing 18672 records to CSV.
+2025-02-05 13:55:13,678 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:55:16,146 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:55:16,148 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:55:16,148 - INFO - Closing database connections...
+2025-02-05 13:55:16,151 - INFO - All connections closed.
+2025-02-05 13:55:16,151 - INFO - Total time: 14.49 seconds
+2025-02-05 13:57:13,118 - INFO - Connecting to Cassandra...
+2025-02-05 13:57:16,408 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 13:57:16,410 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:57:16,411 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 13:57:19,864 - INFO - Connecting to Cassandra...
+2025-02-05 13:57:23,991 - INFO - Cassandra connection established.
+2025-02-05 13:57:23,991 - INFO - Connecting to PostgreSQL...
+2025-02-05 13:57:25,057 - INFO - PostgreSQL connection established.
+2025-02-05 13:57:25,057 - INFO - Start Timestamp: 1738627200000, End Timestamp: 1738799999000
+2025-02-05 13:57:25,058 - INFO - Executing Cassandra query...
+2025-02-05 13:57:31,699 - INFO - Writing data to CSV file: data.csv
+2025-02-05 13:57:31,701 - INFO - Processed 1000 records so far...
+2025-02-05 13:57:31,704 - INFO - Processed 2000 records so far...
+2025-02-05 13:57:31,708 - INFO - Processed 3000 records so far...
+2025-02-05 13:57:31,712 - INFO - Processed 4000 records so far...
+2025-02-05 13:57:31,719 - INFO - Processed 5000 records so far...
+2025-02-05 13:57:31,725 - INFO - Processed 6000 records so far...
+2025-02-05 13:57:31,730 - INFO - Processed 7000 records so far...
+2025-02-05 13:57:31,736 - INFO - Processed 8000 records so far...
+2025-02-05 13:57:31,739 - INFO - Processed 9000 records so far...
+2025-02-05 13:57:31,742 - INFO - Processed 10000 records so far...
+2025-02-05 13:57:31,745 - INFO - Processed 11000 records so far...
+2025-02-05 13:57:31,748 - INFO - Processed 12000 records so far...
+2025-02-05 13:57:31,750 - INFO - Processed 13000 records so far...
+2025-02-05 13:57:31,753 - INFO - Processed 14000 records so far...
+2025-02-05 13:57:31,756 - INFO - Processed 15000 records so far...
+2025-02-05 13:57:31,759 - INFO - Processed 16000 records so far...
+2025-02-05 13:57:31,761 - INFO - Processed 17000 records so far...
+2025-02-05 13:57:31,765 - INFO - Processed 18000 records so far...
+2025-02-05 13:57:31,767 - INFO - Finished writing 18704 records to CSV.
+2025-02-05 13:57:31,768 - INFO - Loading data into PostgreSQL using COPY...
+2025-02-05 13:57:34,184 - INFO - Data successfully loaded into PostgreSQL.
+2025-02-05 13:57:34,185 - INFO - Deleted temporary CSV file: data.csv
+2025-02-05 13:57:34,186 - INFO - Closing database connections...
+2025-02-05 13:57:34,188 - INFO - All connections closed.
+2025-02-05 13:57:34,189 - INFO - Total time: 14.32 seconds
+2025-02-05 15:09:18,020 - INFO - Connecting to Cassandra...
+2025-02-05 15:09:21,816 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:09:21,819 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:09:21,820 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:09:25,912 - INFO - Connecting to Cassandra...
+2025-02-05 15:09:29,812 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:09:29,813 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:09:29,816 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:09:35,700 - INFO - Connecting to Cassandra...
+2025-02-05 15:09:39,234 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:09:39,235 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:09:39,237 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:10:01,495 - INFO - Connecting to Cassandra...
+2025-02-05 15:10:05,338 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:10:05,340 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:10:05,340 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:13:08,753 - INFO - Connecting to Cassandra...
+2025-02-05 15:13:12,516 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:13:12,519 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:13:12,521 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:13:48,804 - INFO - Connecting to Cassandra...
+2025-02-05 15:13:52,656 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:13:52,657 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:13:52,660 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:15:39,594 - INFO - Connecting to Cassandra...
+2025-02-05 15:15:39,598 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:15:41,437 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:15:43,444 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:15:43,447 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:15:43,449 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:15:57,702 - INFO - Connecting to Cassandra...
+2025-02-05 15:15:57,707 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:15:58,230 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:15:58,848 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:16:00,703 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:16:02,706 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:16:02,708 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:16:02,709 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:16:41,492 - INFO - Connecting to Cassandra...
+2025-02-05 15:16:41,494 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:16:41,955 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:16:42,569 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:16:44,029 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:16:46,039 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:16:46,041 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:16:46,043 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:17:07,985 - INFO - Connecting to Cassandra...
+2025-02-05 15:17:07,987 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:17:08,476 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:17:09,090 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:17:10,633 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:17:12,648 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:17:12,651 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:17:12,654 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:23:11,359 - INFO - Connecting to Cassandra...
+2025-02-05 15:23:15,122 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:23:15,124 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:23:15,124 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:23:50,406 - INFO - Connecting to Cassandra...
+2025-02-05 15:23:54,268 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:23:54,271 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:23:54,273 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:24:55,221 - INFO - Connecting to Cassandra...
+2025-02-05 15:24:58,865 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:24:58,867 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:24:58,868 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:26:48,879 - INFO - Connecting to Cassandra...
+2025-02-05 15:26:52,723 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:26:52,725 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:26:52,727 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:27:22,965 - INFO - Connecting to Cassandra...
+2025-02-05 15:27:26,509 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:27:26,511 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:27:26,513 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:27:28,392 - INFO - Connecting to Cassandra...
+2025-02-05 15:27:32,166 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:27:32,167 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:27:32,169 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:28:02,131 - INFO - Connecting to Cassandra...
+2025-02-05 15:28:05,929 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:28:05,932 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:28:05,934 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:32:41,982 - INFO - Connecting to Cassandra...
+2025-02-05 15:32:45,737 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:32:45,739 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:32:45,740 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:33:35,229 - INFO - Connecting to Cassandra...
+2025-02-05 15:33:38,832 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:33:38,834 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:33:38,837 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:36:46,335 - INFO - Connecting to Cassandra...
+2025-02-05 15:36:50,116 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:36:50,117 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:36:50,118 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:37:58,825 - INFO - Connecting to Cassandra...
+2025-02-05 15:38:02,611 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:38:02,612 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:38:02,612 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:38:15,820 - INFO - Connecting to Cassandra...
+2025-02-05 15:38:19,618 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:38:19,620 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:38:19,623 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:38:38,583 - INFO - Connecting to Cassandra...
+2025-02-05 15:38:42,345 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:38:42,347 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:38:42,349 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:39:18,153 - INFO - Connecting to Cassandra...
+2025-02-05 15:39:21,981 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:39:21,983 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:39:21,985 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:40:40,650 - INFO - Connecting to Cassandra...
+2025-02-05 15:40:44,514 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:40:44,516 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:40:44,518 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:41:36,764 - INFO - Connecting to Cassandra...
+2025-02-05 15:41:40,627 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:41:40,633 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:41:40,634 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:41:51,996 - INFO - Connecting to Cassandra...
+2025-02-05 15:41:57,015 - WARNING - [control connection] Error connecting to 67.225.129.11:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3599, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 1670, in cassandra.cluster.Cluster.connection_factory
+  File "cassandra/connection.py", line 846, in cassandra.connection.Connection.factory
+  File "/home/zakir/Projects/thingsboard/anotherFlask/venv/lib/python3.12/site-packages/cassandra/io/libevreactor.py", line 267, in __init__
+    self._connect_socket()
+  File "cassandra/connection.py", line 951, in cassandra.connection.Connection._connect_socket
+OSError: [Errno None] Tried connecting to [('67.225.129.11', 9042)]. Last error: timed out
+2025-02-05 15:41:57,017 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.11:9042': OSError(None, "Tried connecting to [('67.225.129.11', 9042)]. Last error: timed out")})
+2025-02-05 15:41:57,019 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.11:9042': OSError(None, "Tried connecting to [('67.225.129.11', 9042)]. Last error: timed out")})
+2025-02-05 15:42:14,712 - INFO - Connecting to Cassandra...
+2025-02-05 15:42:18,520 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:42:18,523 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:42:18,525 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:42:44,870 - INFO - Connecting to Cassandra...
+2025-02-05 15:42:48,728 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:42:48,730 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:42:48,731 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:43:04,806 - INFO - Connecting to Cassandra...
+2025-02-05 15:43:04,807 - ERROR - Failed to connect to Cassandra: contact_points should not be a string, it should be a sequence (e.g. list) of strings
+2025-02-05 15:44:32,562 - INFO - Connecting to Cassandra...
+2025-02-05 15:44:36,242 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:44:36,246 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:44:36,248 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:45:03,141 - INFO - Connecting to Cassandra...
+2025-02-05 15:45:03,739 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3599, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 1670, in cassandra.cluster.Cluster.connection_factory
+  File "cassandra/connection.py", line 852, in cassandra.connection.Connection.factory
+  File "cassandra/connection.py", line 598, in cassandra.connection.defunct_on_error.wrapper
+  File "cassandra/connection.py", line 1339, in cassandra.connection.Connection._handle_options_response
+cassandra.connection.ProtocolError: cql_version 5 is not supported by remote (w/ native protocol). Supported versions: ['3.4.7']
+2025-02-05 15:45:03,740 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': ProtocolError("cql_version 5 is not supported by remote (w/ native protocol). Supported versions: ['3.4.7']")})
+2025-02-05 15:45:03,741 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': ProtocolError("cql_version 5 is not supported by remote (w/ native protocol). Supported versions: ['3.4.7']")})
+2025-02-05 15:49:47,007 - INFO - Connecting to Cassandra...
+2025-02-05 15:49:50,608 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:49:50,610 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:49:50,620 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:51:38,432 - INFO - Connecting to Cassandra...
+2025-02-05 15:51:42,023 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:51:42,024 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:51:42,025 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:53:31,364 - INFO - Connecting to Cassandra...
+2025-02-05 15:53:35,513 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:53:35,515 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:53:35,517 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:55:51,321 - INFO - Connecting to Cassandra...
+2025-02-05 15:55:55,055 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:55:55,057 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:55:55,061 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:56:49,930 - INFO - Connecting to Cassandra...
+2025-02-05 15:56:49,932 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:56:51,724 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:56:53,728 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:56:53,731 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:56:53,732 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:57:41,215 - INFO - Connecting to Cassandra...
+2025-02-05 15:57:41,216 - WARNING - Cluster.__init__ called with contact_points specified, but no load_balancing_policy. In the next major version, this will raise an error; please specify a load-balancing policy. (contact_points = ['67.225.129.101'], lbp = None)
+2025-02-05 15:57:41,798 - WARNING - Downgrading core protocol version from 66 to 65 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:57:42,317 - WARNING - Downgrading core protocol version from 65 to 5 for 67.225.129.101:9042. To avoid this, it is best practice to explicitly set Cluster(protocol_version) to the version supported by your cluster. http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.protocol_version
+2025-02-05 15:57:43,949 - INFO - Using datacenter 'datacenter1' for DCAwareRoundRobinPolicy (via host '67.225.129.101:9042'); if incorrect, please specify a local_dc to the constructor, or limit contact points to local cluster nodes
+2025-02-05 15:57:45,968 - WARNING - [control connection] Error connecting to 67.225.129.101:9042:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 3577, in cassandra.cluster.ControlConnection._reconnect_internal
+  File "cassandra/cluster.py", line 3654, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3651, in cassandra.cluster.ControlConnection._try_connect
+  File "cassandra/cluster.py", line 3753, in cassandra.cluster.ControlConnection._refresh_schema
+  File "cassandra/metadata.py", line 140, in cassandra.metadata.Metadata.refresh
+  File "cassandra/metadata.py", line 163, in cassandra.metadata.Metadata._rebuild_all
+  File "cassandra/metadata.py", line 2868, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2518, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2027, in get_all_keyspaces
+  File "cassandra/metadata.py", line 2807, in cassandra.metadata.SchemaParserV4._query_all
+  File "cassandra/connection.py", line 1126, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1124, in cassandra.connection.Connection.wait_for_responses
+  File "cassandra/connection.py", line 1636, in cassandra.connection.ResponseWaiter.deliver
+cassandra.OperationTimedOut: errors=None, last_host=None
+2025-02-05 15:57:45,971 - ERROR - Control connection failed to connect, shutting down Cluster:
+Traceback (most recent call last):
+  File "cassandra/cluster.py", line 1740, in cassandra.cluster.Cluster.connect
+  File "cassandra/cluster.py", line 3543, in cassandra.cluster.ControlConnection.connect
+  File "cassandra/cluster.py", line 3588, in cassandra.cluster.ControlConnection._reconnect_internal
+cassandra.cluster.NoHostAvailable: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
+2025-02-05 15:57:45,972 - ERROR - Failed to connect to Cassandra: ('Unable to connect to any servers', {'67.225.129.101:9042': OperationTimedOut('errors=None, last_host=None')})
