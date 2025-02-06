@@ -52,26 +52,19 @@ pg_conn = get_postgres()
 pg_cursor = pg_conn.cursor()
 
 # Set a smaller fetch size for pagination
-cassandra_session.default_fetch_size = 100000  # Fetch rows at a time
+cassandra_session.default_fetch_size = 200000  # Fetch rows at a time
 
 keys = (
-    'INV_Total_Power', 'PV_Daily_Energy_Today', 'CUF_AC', 'CO2_EmissionsKg_Saved',
-    'DG_Total_Power', 'DG_Total_Energy', 'VOLT_L1_L2', 'Daily_Runtime_Sum',
-    'Daily_Saving_Sum', 'Grid_Power_kW', 'Grid_AVG_Frequency', 'Grid_Daily_Energy_Export_kWh',
-    'Grid_Daily_Energy_Import_kWh', 'Grid_AVG_Voltage', 'AGC_AMP_L1', 'PCS_Total_Power',
-    'kWhcharged_Day', 'kWhdischarged_Day', 'ESS_SOC', 'Line_AVG_HZ', 'ESS_AVG_Line_Volt',
-    'ESS_AVG_Line_Amps', 'Load_Power', 'CUF_DC', 'Total_Runtime_5_min', 'Total_Saving_5_min',
-    'Plant_Availability', 'Plant_Down_instance', 'Plant_Down', 'Grid_Out', 'Grid_Out_Occurrence',
-    'Grid_Out_Instance'
-)
+        'Total_Inverter_Availability', 'PV_Total_Energy_kWh'
+    )
 
-# Start the timer
+# Set start date to January 1st, 12:00 AM UTC
 start_date = datetime.utcnow().replace(month=1, day=1, hour=0, minute=0, second=0, microsecond=0)
 startTs = convertIntoMs(start_date)
 
 # End date is 5 days later at 11:59:59 PM
-startTs = 1738627200000 # 5-10
-endTs = 1738799999000 #20feb
+startTs = 1735603200000  # 5-10
+endTs = 1738886399000
 logging.info(f"Start Timestamp: {startTs}, End Timestamp: {endTs}")
 
 # Cassandra query
@@ -84,7 +77,7 @@ query = f"""
     ALLOW FILTERING;
 """
 
-statement = SimpleStatement(query, fetch_size=100000)
+statement = SimpleStatement(query, fetch_size=200000)
 logging.info("Executing Cassandra query...")
 result = cassandra_session.execute(statement)
 

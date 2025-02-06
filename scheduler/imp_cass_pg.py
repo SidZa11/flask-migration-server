@@ -46,6 +46,19 @@ def get_postgres():
         logging.error(f"Failed to connect to PostgreSQL: {e}")
         raise
 
+# Delete existing data for the one-hour range
+def delete_existing_data(pg_cursor, pg_conn, startTs, endTs):
+    try:
+        pg_cursor.execute("""
+            DELETE FROM imp_cass_pg
+            WHERE ts > %s AND ts < %s;
+        """, (startTs, endTs))
+        pg_conn.commit()
+        logging.info(f"Deleted existing data for timestamp range: {startTs} to {endTs}.")
+    except Exception as e:
+        logging.error(f"Error deleting existing data: {e}")
+        pg_conn.rollback()
+
 # Main migration function
 def migrate_data():
     configure_logging()
@@ -71,6 +84,9 @@ def migrate_data():
     # Get connections
     pg_conn = get_postgres()
     pg_cursor = pg_conn.cursor()
+
+    # Delete existing data for the one-hour range
+    delete_existing_data(pg_cursor, pg_conn, startTs, endTs)
     
     # Set a smaller fetch size for pagination
     cassandra_session.default_fetch_size = 100000  # Fetch rows at a time
@@ -83,7 +99,7 @@ def migrate_data():
         'kWhcharged_Day', 'kWhdischarged_Day', 'ESS_SOC', 'Line_AVG_HZ', 'ESS_AVG_Line_Volt',
         'ESS_AVG_Line_Amps', 'Load_Power', 'CUF_DC', 'Total_Runtime_5_min', 'Total_Saving_5_min',
         'Plant_Availability', 'Plant_Down_instance', 'Plant_Down', 'Grid_Out', 'Grid_Out_Occurrence',
-        'Grid_Out_Instance'
+        'Grid_Out_Instance', 'Total_Inverter_Availability', 'PV_Total_Energy_kWh'
     )
     
     # Cassandra query
@@ -135,6 +151,16 @@ def migrate_data():
     # Clean up CSV file
     os.remove(csv_file)
     logging.info(f"Deleted temporary CSV file: {csv_file}")
+
+    # Call the PostgreSQL stored procedure
+    logging.info("Calling PostgreSQL stored procedure 'usp_get_DailyDeviceSummary'...")
+    try:
+        pg_cursor.execute("CALL usp_get_DailyDeviceSummary();")
+        pg_conn.commit()
+        logging.info("Stored procedure executed successfully.")
+    except Exception as e:
+        logging.error(f"Error executing stored procedure: {e}")
+        pg_conn.rollback()
     
     # Close connections
     logging.info("Closing database connections...")
